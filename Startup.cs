@@ -27,7 +27,6 @@ namespace AspNetCoreAppHealthCheck
         {
             app.UseHealthChecks("/healthcheck", new HealthCheckOptions
             {
-                Predicate = _ => true,
                 ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
             });
             app.UseHealthChecksUI();
