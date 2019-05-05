@@ -19,7 +19,8 @@ namespace AspNetCoreAppHealthCheck
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHealthChecks()
-                .AddMongoDb(Configuration["MongoConnection:ConnectionString"]);
+                .AddMongoDb(Configuration["MongoConnection:ConnectionString"])
+                .AddCheck<ExampleHealthCheck>("example_health_check");
             services.AddHealthChecksUI();
         }
 
